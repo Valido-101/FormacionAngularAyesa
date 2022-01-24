@@ -10,7 +10,22 @@ export class AppComponent {
 
   
   constructor(){
-    this.cuentaLetras('Angular')
+    //this.cuentaLetras('Angular')
+    console.log('Constructor del componente')
+  }
+
+  //Métodos del ciclo de vida de un componente en angular
+
+  ngOnInit(): void {
+    console.log('El componente ha sido iniciado');
+  }
+
+  ngAfterViewInit(): void {
+    console.log('La vista HTML ha cargado completamente');
+  }
+
+  ngOnDestroy(): void {
+    console.log('El componente ha sido destruido');
   }
 
   /**

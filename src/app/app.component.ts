@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'primerProyecto';
 
+  //Variables
+  modoElegido:string = 'Comprar';
   
   constructor(){
     //this.cuentaLetras('Angular')
@@ -36,5 +38,9 @@ export class AppComponent {
   cuentaLetras(palabra:string):number{
     const cantidadLetras:number = palabra.length;
     return cantidadLetras;
+  }
+
+  cambiarModo(modo:string): void {
+    
   }
 }

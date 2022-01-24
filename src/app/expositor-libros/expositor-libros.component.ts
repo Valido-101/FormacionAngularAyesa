@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Libro } from '../interfaces/libro';
 
 @Component({
   selector: 'app-expositor-libros',
@@ -10,6 +11,7 @@ export class ExpositorLibrosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   //Ejercicio que aparece en la formación, setea una cookie con esa información
   buttonClick(): void{
     localStorage.setItem('usuarioLogado','1');
+    alert('Cookie seteada');
   }
 
 }

@@ -1,18 +1,27 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivate, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthedGuard implements CanActivate {
 
-  constructor(){
-  }
+  constructor(
+    private router:Router
+  ){}
 
   canActivate(): boolean{
     
-    return true;
+    if(localStorage.getItem('usuarioLogado')==='1')
+    {
+      alert('Usuario ya loggeado');
+      this.router.navigate(['/']);
+      return false;
+    }
+    else
+    {
+      return true;
+    }
     
   }
 }

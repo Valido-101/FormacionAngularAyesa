@@ -7,6 +7,9 @@ import { ExpositorLibrosComponent } from './components/expositor-libros/exposito
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 import { LoginComponent } from './components/login/login.component';
 import { CreacionLibroComponent } from './components/creacion-libro/creacion-libro.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -23,7 +26,10 @@ import { AuthGuard } from './guards/auth.guard';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

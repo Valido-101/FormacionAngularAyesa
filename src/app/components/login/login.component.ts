@@ -12,4 +12,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Ejercicio que aparece en la formación, setea una cookie con esa información
+  buttonClick(): void{
+    localStorage.setItem('usuarioLogado','1');
+  }
+
 }

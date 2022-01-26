@@ -9,6 +9,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import { CreacionLibroComponent } from './components/creacion-libro/creacion-libro.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { CreacionLibroComponent } from './components/creacion-libro/creacion-lib
     MatCardModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

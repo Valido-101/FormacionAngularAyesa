@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Libro } from '../interfaces/libro';
+import { Libro } from '../../interfaces/libro';
 
 @Component({
   selector: 'app-expositor-libros',

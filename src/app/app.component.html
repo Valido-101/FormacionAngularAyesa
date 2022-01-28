@@ -18,7 +18,7 @@
 
 <mat-drawer-container class="example-container">
   <!--Parte del menú de navegación donde se declaran las rutas-->
-  <mat-drawer mode="side" opened #matDrawer><!--Referencia local del mat-drawer para poder usarlo en el evento click de arriba-->
+  <mat-drawer mode="side" closed #matDrawer><!--Referencia local del mat-drawer para poder usarlo en el evento click de arriba-->
     <div class="elementoBarra" [routerLink]="['login']">Inicio de sesión</div>
     <div class="elementoBarra" [routerLink]="['expositor']">Expositor</div>
     <div class="elementoBarra" [routerLink]="['creacionLibro']">Creación Libro</div>

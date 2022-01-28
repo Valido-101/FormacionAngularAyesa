@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './components/login/login.component';
 import { CreacionLibroComponent } from './components/creacion-libro/creacion-libro.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -29,7 +32,10 @@ import { AuthGuard } from './guards/auth.guard';
     MatButtonModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatIconModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatInputModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

@@ -1,2 +1,35 @@
 <!--Botón del primer ejercicio de la formación que setea una cookie-->
-<button mat-raised-button color="primary" (click)="buttonClick()">Setear cookie</button>
+<!--<button mat-raised-button color="primary" (click)="buttonClick()">Setear cookie</button>-->
+<h1>Formulario de Inicio de Sesión</h1>
+<form [formGroup]="miFormulario">
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <!--Todos los cambios relativos al funcionamiento del formcontrol se deben hacer en el input-->
+        <input matInput formControlName="email">
+
+        <!--ERRORES-->
+        <mat-error *ngIf="miFormulario.get('email')?.hasError('required')">
+            El campo es obligatorio
+        </mat-error>
+        <mat-error *ngIf="miFormulario.get('email')?.hasError('email')">
+            El campo debe ser un email
+        </mat-error>
+
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <!--Todos los cambios relativos al funcionamiento del formcontrol se deben hacer en el input-->
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+
+        <!--ERRORES-->
+        <mat-error *ngIf="miFormulario.get('password')?.hasError('required')">
+            El campo es obligatorio
+        </mat-error>
+
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+    </mat-form-field>
+</form>
+<button mat-raised-button color="primary" (click)="submitForm()" [disabled]="!miFormulario.valid">Iniciar Sesión</button>

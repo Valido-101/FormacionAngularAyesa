@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { Libro } from '../../interfaces/libro';
 
 @Component({
@@ -11,6 +12,8 @@ export class ExpositorLibrosComponent implements OnInit {
   //Variables
   modoElegido:string = 'Comprar';
   librosOfrecidos:Libro[] = [];
+  //Control de carrito
+  carrito: { precioTotal:number, cantidadLibros: number } = { precioTotal: 0, cantidadLibros: 0};
 
   constructor() { }
 
@@ -23,8 +26,14 @@ export class ExpositorLibrosComponent implements OnInit {
     this.librosOfrecidos.push({titulo: 'El lazarillo de Tormes', precio: 5, stock: 10});
   }
 
-  cambiarModo(modo:string): void {
-
+  /**
+   * Gestiona la acción y la compra de un libro, sumando su precio
+   * y aumentando el número de elementos del carrito
+   * @param libro Libro recibido
+   */
+  libroNotify(libro: Libro){
+    this.carrito.precioTotal += libro.precio;
+    this.carrito.cantidadLibros++;
   }
 
 }

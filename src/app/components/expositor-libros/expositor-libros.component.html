@@ -1,15 +1,5 @@
 <div class="clear"></div>
-<!--Mat card que se repite tantas veces como libros haya en librosOfrecidos de app.component.ts-->
-<mat-card *ngFor="let libro of librosOfrecidos">
-  <mat-card-title>{{libro.titulo}}</mat-card-title>
-  <!--Uso de pipe para que se vea el autor en mayúscula (no modifica el valor de la variable, sólo cómo se muestra)-->
-  <mat-card-subtitle>Autor: {{libro.autor | uppercase}}</mat-card-subtitle>
-  <mat-card-subtitle>Precio: {{libro.precio}}€</mat-card-subtitle>
-  <mat-card-subtitle [ngStyle]="{color: libro.stock < 5 ? 'red' : 'green'}">Stock: {{libro.stock}}</mat-card-subtitle>
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="modoElegido='Comprar'">Comprar</button>
-    <button mat-raised-button color="accent" (click)="cambiarModo('Consultar')">Añadir</button>
-    <button mat-raised-button color="warn">Restar</button>
-  </mat-card-actions>
-</mat-card>
+<app-libro [libro]="libro" *ngFor="let libro of librosOfrecidos" (comprado)="libroNotify($event)">
+
+</app-libro>
 <div class="clear"></div>

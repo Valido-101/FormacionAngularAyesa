@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,13 +18,15 @@ import {MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './components/login/login.component';
 import { CreacionLibroComponent } from './components/creacion-libro/creacion-libro.component';
 import { AuthGuard } from './guards/auth.guard';
+import { LibroComponent } from './components/libro/libro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExpositorLibrosComponent,
     LoginComponent,
-    CreacionLibroComponent
+    CreacionLibroComponent,
+    LibroComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import { AuthGuard } from './guards/auth.guard';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule,
+    MatExpansionModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
